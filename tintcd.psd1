@@ -1,6 +1,6 @@
 @{
     RootModule = 'tintcd.psm1'
-    ModuleVersion = '0.1.0'
+    ModuleVersion = '0.1.2'
     GUID = 'dc35c081-cc53-4d67-8bc2-515058f233f2'
     Author = 'ymyke'
     CompanyName = 'N/A'
