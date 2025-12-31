@@ -1,0 +1,83 @@
+{
+  "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json",
+  "blocks": [
+    {
+      "type": "prompt",
+      "alignment": "left",
+      "segments": [
+        {
+          "template": " \uf0e7 ",
+          "foreground": "#100e23",
+          "powerline_symbol": "\ue0b0",
+          "background": "#ffe9aa",
+          "type": "root",
+          "style": "powerline"
+        },
+        {
+          "type": "path",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#100e23",
+          "background": "#91ddff",
+          "background_templates": [
+            "{{ if .Env.TINTCD_ACCENT }}{{ .Env.TINTCD_ACCENT }}{{ end }}"
+          ],
+          "template": " {{ .Path }} ",
+          "properties": {
+            "folder_icon": "\uf115",
+            "folder_separator_icon": " \ue0b1 ",
+            "home_icon": "\ueb06",
+            "style": "agnoster"
+          }
+        },
+        {
+          "type": "git",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#193549",
+          "background": "#95ffa4",
+          "background_templates": [
+            "{{ if .Working.Changed }}#ffeb95{{ end }}"
+          ],
+          "template": " {{ .HEAD }}{{ if .Working.Changed }} \uf044{{ end }}{{ if .Staging.Changed }} \uf046{{ end }} ",
+          "properties": {
+            "fetch_status": true
+          }
+        },
+        {
+          "type": "python",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#100e23",
+          "background": "#906cff",
+          "template": " \ue235 {{ .Venv }} "
+        },
+        {
+          "type": "executiontime",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#100e23",
+          "background": "#c792ea",
+          "template": " \uf252 {{ .FormattedMs }} ",
+          "properties": {
+            "threshold": 2000
+          }
+        },
+        {
+          "type": "status",
+          "style": "powerline",
+          "powerline_symbol": "\ue0b0",
+          "foreground": "#ffffff",
+          "background": "#ff8080",
+          "template": " \uf00d {{ reason .Code }} ",
+          "properties": {
+            "always_enabled": false
+          }
+        }
+      ]
+    }
+  ],
+  "version": 4,
+  "console_title_template": "{{ .Folder }}",
+  "final_space": true
+}
