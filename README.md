@@ -11,6 +11,10 @@
 Install-Module tintcd
 ```
 
+## Why
+
+I always have several terminal windows open in different folders. I'd alt-tab back, squint at the prompt, and wonder if I'm still in the right place. The prompt alone wasn't enough. I wanted something low-effort: no manual config, no color-picking — just instant "wait, wrong folder!" recognition or a warm and fuzzy "ah yes, this one."
+
 ## What it does
 
 When you change directories, tintcd hashes the path and applies a unique background
