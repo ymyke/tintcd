@@ -3,6 +3,8 @@
 > Spatial memory for your terminal. Each directory gets a stable, deterministic
 > background tint.
 
+<img src="demo.gif" width="500">
+
 ## Install
 
 ```powershell
@@ -108,6 +110,13 @@ HSL ensures consistent visibility: all backgrounds are equally dark, all accents
 - Windows Terminal or VS Code (for OSC 11 background support)
 
 `$env:TINTCD_ACCENT` is set in any terminal, so prompt themes can use it even without OSC 11 support.
+
+## Limitations
+
+- **Overrides transparency/background images** — OSC 11 replaces any custom terminal background. Use `tintcd -Disable` to preserve.
+- **Dark mode default** — Default lightness ranges assume dark terminals. See Configuration for light mode values.
+- **Color contrast** — Tinted backgrounds may affect readability of colored text. Windows Terminal's `adjustIndistinguishableColors` setting (enabled by default) helps.
+- **oh-my-posh only** — Prompt integration is tested with oh-my-posh. Starship/others may work via `$env:TINTCD_ACCENT` but is not tested.
 
 ## Contributing
 

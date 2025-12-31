@@ -1,5 +1,6 @@
 # Example $PROFILE integration for tintcd
 # Shows tintcd alongside Python venv auto-activation
+# (Deliberately simple — enhance for your needs: multiple venv dirs, already-active check, etc.)
 
 # The key insight: tintcd uses prompt-hook, so it works with any cd wrapper.
 
