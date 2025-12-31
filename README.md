@@ -1,7 +1,7 @@
 # tintcd
 
-> Spatial memory for your terminal. Each directory gets a stable, deterministic
-> background tint.
+Spatial memory for your terminal. Each directory gets a stable, deterministic background
+tint.
 
 <img src="demo.gif" width="800">
 
