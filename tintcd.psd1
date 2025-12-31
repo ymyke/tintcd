@@ -1,6 +1,6 @@
 @{
     RootModule = 'tintcd.psm1'
-    ModuleVersion = '1.0.0'
+    ModuleVersion = '0.1.0'
     GUID = 'dc35c081-cc53-4d67-8bc2-515058f233f2'
     Author = 'ymyke'
     CompanyName = 'N/A'
@@ -16,7 +16,7 @@
     AliasesToExport = @('tintcd')
     PrivateData = @{
         PSData = @{
-            Tags = @('terminal', 'colors', 'theming', 'windows-terminal', 'oh-my-posh')
+            Tags = @('powershell', 'pwsh', 'terminal', 'prompt', 'cli', 'colors', 'theming', 'windows-terminal', 'oh-my-posh')
             LicenseUri = 'https://github.com/ymyke/tintcd/blob/main/LICENSE'
             ProjectUri = 'https://github.com/ymyke/tintcd'
         }
