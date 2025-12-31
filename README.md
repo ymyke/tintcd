@@ -3,7 +3,7 @@
 > Spatial memory for your terminal. Each directory gets a stable, deterministic
 > background tint.
 
-<img src="demo.gif" width="500">
+<img src="demo.gif" width="800">
 
 ## Install
 
