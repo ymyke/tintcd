@@ -298,7 +298,9 @@ function Enable-TintcdPromptHook {
 
     # Define new prompt - no closure, uses global vars for reliable resolution
     Set-Item function:prompt -Value {
-        # String literal marker for AST-based detection (survives better than comments)
+        # Capture $? and $LASTEXITCODE BEFORE any statement clobbers them
+        $origDollarQuestion = $?
+        $origLastExitCode = $global:LASTEXITCODE
         $null = 'TINTCD_PROMPT_HOOK'
 
         # Run tintcd check, suppress output, swallow errors (prompt must never throw)
@@ -307,9 +309,15 @@ function Enable-TintcdPromptHook {
         }
         catch { }
 
+        # Restore $LASTEXITCODE before calling inner prompt
+        $global:LASTEXITCODE = $origLastExitCode
+
         # Run original prompt with error handling
         try {
-            $p = $global:__TintcdOriginalPrompt.InvokeReturnAsIs()
+            # Restore $? right before the call — must be the last statement before &
+            # so that the callee's first line sees the correct value.
+            if (-not $origDollarQuestion) { Write-Error '' -ErrorAction 'Ignore' }
+            $p = & $global:__TintcdOriginalPrompt
             if ($null -eq $p) { throw "null" }
             $p
         }
